@@ -1,0 +1,48 @@
+// ============================================================================
+//  tangnano20k.cst  -  Restricoes de pinos / Pin constraints
+//  Sipeed Tang Nano 20K  (Gowin GW2AR-LV18QN88C8/I7)
+// ----------------------------------------------------------------------------
+//  IMPORTANTE / IMPORTANT:
+//  Os numeros de pino do HDMI/botoes podem variar com a revisao da placa.
+//  Confira com o exemplo oficial da Sipeed (TangNano-20K-example) e com o
+//  esquematico se algo nao funcionar. Os valores abaixo sao os mais comuns.
+//  HDMI/button pin numbers can vary by board revision; verify against the
+//  official Sipeed example and schematic if something does not work.
+// ============================================================================
+
+// ---- Clock de 27 MHz / 27 MHz crystal ----
+IO_LOC  "clk27" 4;
+IO_PORT "clk27" PULL_MODE=UP;
+
+// ---- Botoes (ativo-baixo) / buttons (active-low) ----
+IO_LOC  "btn_n[0]" 88;
+IO_PORT "btn_n[0]" PULL_MODE=UP;
+IO_LOC  "btn_n[1]" 87;
+IO_PORT "btn_n[1]" PULL_MODE=UP;
+
+// ---- LEDs (ativo-baixo) / LEDs (active-low) ----
+IO_LOC  "led[0]" 15;
+IO_LOC  "led[1]" 16;
+IO_LOC  "led[2]" 17;
+IO_LOC  "led[3]" 18;
+IO_LOC  "led[4]" 19;
+IO_LOC  "led[5]" 20;
+IO_PORT "led[0]" PULL_MODE=UP DRIVE=8;
+IO_PORT "led[1]" PULL_MODE=UP DRIVE=8;
+IO_PORT "led[2]" PULL_MODE=UP DRIVE=8;
+IO_PORT "led[3]" PULL_MODE=UP DRIVE=8;
+IO_PORT "led[4]" PULL_MODE=UP DRIVE=8;
+IO_PORT "led[5]" PULL_MODE=UP DRIVE=8;
+
+// ---- HDMI / TMDS (pares diferenciais) / differential pairs ----
+//  Cada linha define o pino P,N do par. O sinal _n e o complemento automatico
+//  gerado pelo ELVDS_OBUF. / Each line gives the P,N pins of the pair; _n is
+//  the automatic complement from ELVDS_OBUF.
+IO_LOC  "tmds_clk_p" 33,34;
+IO_PORT "tmds_clk_p" PULL_MODE=NONE DRIVE=3.5;
+IO_LOC  "tmds_d_p[0]" 35,36;
+IO_PORT "tmds_d_p[0]" PULL_MODE=NONE DRIVE=3.5;
+IO_LOC  "tmds_d_p[1]" 37,38;
+IO_PORT "tmds_d_p[1]" PULL_MODE=NONE DRIVE=3.5;
+IO_LOC  "tmds_d_p[2]" 39,40;
+IO_PORT "tmds_d_p[2]" PULL_MODE=NONE DRIVE=3.5;

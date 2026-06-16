@@ -1,0 +1,24 @@
+# build artifacts
+build/
+*.vvp
+*.vcd
+*.fs
+*.json
+sine_lut.hex.bak
+
+# Gowin IDE
+impl/
+*.gprj.user
+gwsynthesis/
+*.rpt.html
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# manter a tabela de seno versionada / keep the sine table tracked
+!src/sine_lut.hex
